@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="/static/stylesheet.css" rel="stylesheet">
+        <title>outcome</title>
+    </head>
+    <body>
+    {{if lt .NbrOfAttempt 1}}
+        <p class="outcometext">you lost</p>
+        <p class="outcomeimg"><img src="/static/tomb.png" alt="the serial killer is dead yay"></p>
+    {{else}}
+        <p class="outcometext">you won</p>
+        <p class="outcomeimg"><img  src="/static/trophy.png" alt="congratulation you won"></p>
+    {{end}}
+        <p class="outcomeword">{{.WordToFind}}</p>
+        <a href="/"><button class="newgame" >new game</button></a>
+        <a class="dictionary" href="https://www.le-dictionnaire.com/definition/{{.StringWord}}" target="_blank">word definition if it doesn't have one the word is either made up or a proper name</a>
+</body>
+</html>

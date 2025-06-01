@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="/static/stylesheet.css" rel="stylesheet">
+        <title> HangMan </title>
+    </head>
+    <body>
+        <h1>HangedMan</h1>
+        <br>
+        <b class="welcometext"> welcome, please select a difficulty setting</b>
+     <form action="/final" method="post">
+        <input class="name" type="text" name="name">
+        <select class="difficulty" name="select" id="seloct">
+            <option class="easy" value="words.txt">easy</option>
+            <option class="medium" value="words2.txt">medium</option>
+            <option class="hard" value="words3.txt">hard</option>
+        </select>
+        <input class="diffbutton" type= "submit" value="valider">
+     </form>
+     <a href="/info"><button class="buttoninfo">how to play</button></a>
+     <p>{{.Name}}</p>
+    </body>
+</html>

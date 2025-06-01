@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="/static/stylesheet.css" rel="stylesheet">
+        <title> HangMan </title>
+    </head>
+    <body>
+        <h1>HangedMan</h1>
+        <div class="rectangleWord"><br><center>{{.WordToFind}}</center></div>
+        <div class="rectangleHang">
+            {{if eq .NbrOfAttempt 9}}
+            <svg class="hangingstand" viewBox="0 0 100 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0">
+            </svg>
+            <!-- <img class="hangingstand" src="/static/hanging.png" alt="hangpart0"> -->
+            {{end}}
+            {{if eq .NbrOfAttempt 8}}
+
+            <svg class="hangingstand" viewBox="0 0 100 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 M 40 30 l 0 65 l 1 0 l 0 -65">
+            </svg>
+            <!-- <img class="hangingstand" src="/static/hanging1.png" alt="hangpart1"> -->
+            {{end}}
+            {{if eq .NbrOfAttempt 7}}
+            <svg class="hangingstand" viewBox="0 0 100 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 M 40 30 l 0 65 l 1 0 l 0 -65 M 40 29 l 40 0 l 0 1 l -40 0">
+            </svg>
+            {{end}}
+            {{if eq .NbrOfAttempt 6}}
+            <svg class="hangingstand" viewBox="0 0 100 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 
+                         M 40 30 l 0 65 l 1 0 l 0 -65 
+                         M 40 29 l 40 0 l 0 1 l -40 0
+                         M 46 30 l -5 5 l 0 2 l 7 -7">
+            </svg>
+            
+            {{end}}
+            {{if eq .NbrOfAttempt 5}}
+            <svg class="hangingstand" viewBox="0 0 150 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 
+                         M 40 30 l 0 65 l 1 0 l 0 -65 
+                         M 40 29 l 60 0 l 0 1 l -60 0
+                         M 46 30 l -5 5 l 0 2 l 7 -7
+                         M 100 35 l 0 -5 l -1 0 l 0 5">
+            </svg>
+            {{end}}
+            {{if eq .NbrOfAttempt 4}}
+            <svg class="hangingstand" viewBox="0 0 150 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 
+                         M 40 30 l 0 65 l 1 0 l 0 -65 
+                         M 40 29 l 60 0 l 0 1 l -60 0
+                         M 46 30 l -5 5 l 0 2 l 7 -7
+                         M 100 35 l 0 -5 l -1 0 l 0 5
+                         M 99.5 45 l -5 -5 l 5 -5 l 5 5 l -5 5">
+            </svg>
+            {{end}}
+            {{if eq .NbrOfAttempt 3}}
+            <svg class="hangingstand" viewBox="0 0 150 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 
+                         M 40 30 l 0 65 l 1 0 l 0 -65 
+                         M 40 29 l 60 0 l 0 1 l -60 0
+                         M 46 30 l -5 5 l 0 2 l 7 -7
+                         M 100 35 l 0 -5 l -1 0 l 0 5
+                         M 99.5 45 l -5 -5 l 5 -5 l 5 5 l -5 5
+                         M 99 63 l 0 -20 l 1 0 l 0 20
+                         ">
+            </svg>
+            {{end}}
+            {{if eq .NbrOfAttempt 2}}
+            <svg class="hangingstand" viewBox="0 0 150 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 
+                         M 40 30 l 0 65 l 1 0 l 0 -65 
+                         M 40 29 l 60 0 l 0 1 l -60 0
+                         M 46 30 l -5 5 l 0 2 l 7 -7
+                         M 100 35 l 0 -5 l -1 0 l 0 5
+                         M 99.5 45 l -5 -5 l 5 -5 l 5 5 l -5 5
+                         M 99 63 l 0 -20 l 1 0 l 0 20
+                         M 95 73 l 5 -10 l -1 0 l -5 10">
+            </svg>
+            {{end}}
+            {{if eq .NbrOfAttempt 1}}
+            <svg class="hangingstand" viewBox="0 0 150 100">
+                <path d="M 10 95 l 60 0 l 0 -1 l -60 0 
+                         M 40 30 l 0 65 l 1 0 l 0 -65 
+                         M 40 29 l 60 0 l 0 1 l -60 0
+                         M 46 30 l -5 5 l 0 2 l 7 -7
+                         M 100 35 l 0 -5 l -1 0 l 0 5
+                         M 99.5 45 l -5 -5 l 5 -5 l 5 5 l -5 5
+                         M 99 63 l 0 -20 l 1 0 l 0 20
+                         M 95 73 l 5 -10 l -1 0 l -5 10
+                         M 105 73 l -5 -10 l -1 0 l 5 10">
+            </svg>
+            {{end}}</div>
+        <div class="rectangleAttempt"><br><center>{{.NbrOfAttempt}} attempt left</center></div>
+        <div class="alreadyUsed"><center>{{.GivenLetter}}<br>{{.GivenWord}}</center></div>
+        <div class="rectanglePrompt"><center><br>enter a letter or a word <br>
+            <form id="prompt" action="/final" method="post">
+                <input class="field" type="text" name="letter"><input type= "submit" value="envoyer">
+            </form></center>
+        </div>
+    </body>
+</html>

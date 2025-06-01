@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="/static/stylesheet.css" rel="stylesheet">
+        <title> HangMan </title>
+    </head>
+    <body>
+        <h1>HangedMan</h1>
+        <div class="rectangleWordExplaination"><br><center>here will be written the word you need to find</center></div>
+        <div class="rectangleHang">here will be the drawing</div>
+        <div class="rectangleAttempt"><br><center>here will be writen the number of attempt</center></div>
+        <div class="rectanglePrompt"><center><br>enter a letter or a word (also the way back)<br>
+            <form id="prompt" action="/" method="post" >
+                <input class="field" type="text" name="letter"> <input type= "submit" value="envoyer">
+            </form></center>
+        </div>
+        <div class="alreadyUsedExplanation"><center>tested letter<br>[]<br>[]<br>tested word</center></div>
+    </body>
+</html>
